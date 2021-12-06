@@ -6,7 +6,7 @@
 /*   By: sanghole <sanghole@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 16:28:24 by sanghole          #+#    #+#             */
-/*   Updated: 2021/12/06 12:16:28 by sanghole         ###   ########.fr       */
+/*   Updated: 2021/12/06 17:06:05 by sanghole         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ typedef struct s_data
 	t_philo			*philo;
 	pthread_mutex_t	*fork;
 	pthread_mutex_t	print;
+	pthread_mutex_t	eat_lock;
 	long			c_philo;
 	long			t_to_die;
 	long			t_to_eat;

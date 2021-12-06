@@ -6,7 +6,7 @@
 /*   By: sanghole <sanghole@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/14 14:38:40 by sanghole          #+#    #+#             */
-/*   Updated: 2021/12/06 13:16:31 by sanghole         ###   ########.fr       */
+/*   Updated: 2021/12/06 17:08:18 by sanghole         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,9 @@ void	eat(t_philo *ph)
 			ph->data->check_eat++;
 	}
 	print_status(ph, EAT);
+	pthread_mutex_lock(&ph->data->eat_lock);
 	ph->last_eat_time = time_now();
+	pthread_mutex_unlock(&ph->data->eat_lock);
 	my_usleep(ph->data->t_to_eat);
 }
 

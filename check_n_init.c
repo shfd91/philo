@@ -6,7 +6,7 @@
 /*   By: sanghole <sanghole@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/14 14:26:55 by sanghole          #+#    #+#             */
-/*   Updated: 2021/11/29 15:44:29 by sanghole         ###   ########.fr       */
+/*   Updated: 2021/12/06 17:07:18 by sanghole         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,7 @@ int	init_mutex_philo(t_data *data)
 		return (print_error("memory alloc"));
 	data->fork = (pthread_mutex_t *)malloc(sizeof(pthread_mutex_t) * \
 		data->c_philo);
+	pthread_mutex_init(&data->eat_lock, NULL);
 	if (!data->fork)
 	{
 		free(data->philo);

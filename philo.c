@@ -6,7 +6,7 @@
 /*   By: sanghole <sanghole@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 16:28:26 by sanghole          #+#    #+#             */
-/*   Updated: 2021/12/06 04:29:49 by sanghole         ###   ########.fr       */
+/*   Updated: 2021/12/06 17:09:23 by sanghole         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,14 @@ int	check_die(t_data *data)
 	{
 		if (data->check_eat == data->c_philo)
 			return (check_end(data));
+		pthread_mutex_lock(&data->eat_lock);
 		if ((time_now() - data->philo[i].last_eat_time) > data->t_to_die)
 		{
 			print_status(&data->philo[i], DIE);
+			pthread_mutex_unlock(&data->eat_lock);
 			return (check_end(data));
 		}
+		pthread_mutex_unlock(&data->eat_lock);
 		i++;
 	}
 	return (0);
