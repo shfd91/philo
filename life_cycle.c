@@ -6,7 +6,7 @@
 /*   By: sanghole <sanghole@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/14 14:38:40 by sanghole          #+#    #+#             */
-/*   Updated: 2021/12/06 03:50:01 by sanghole         ###   ########.fr       */
+/*   Updated: 2021/12/06 12:15:34 by sanghole         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,10 @@ void	*life_cycle(void *philo)
 	while (ph->data->check_end == 0)
 	{
 		pthread_mutex_lock(&ph->data->fork[ph->id]);
-		if (get_forks(philo, 0))
+		if (print_status(ph, FORK))
 			return (NULL);
 		pthread_mutex_lock(&ph->data->fork[(ph->id + 1) % ph->data->c_philo]);
-		if (get_forks(philo, 1))
+		if (print_status(ph, FORK))
 			return (NULL);
 		eat(ph);
 		pthread_mutex_unlock(&ph->data->fork[ph->id]);

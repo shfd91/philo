@@ -6,7 +6,7 @@
 #    By: sanghole <sanghole@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/12 21:08:01 by sanghole          #+#    #+#              #
-#    Updated: 2021/11/29 15:40:35 by sanghole         ###   ########.fr        #
+#    Updated: 2021/12/06 04:12:10 by sanghole         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,12 +41,12 @@ else
 endif
 
 %.o 		: %.c
-	$(CC) -g $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
 all			: $(NAMES)
 
 $(NAMES) : $(OBJS)
-	$(CC) -g $(CFLAGS) $(CFLAGS) $(OBJS) -o $(NAMES)
+	$(CC) $(CFLAGS) $(CFLAGS) $(OBJS) -o $(NAMES)
 
 bonus		:
 	make WITH_BONUS=1 all

@@ -6,7 +6,7 @@
 /*   By: sanghole <sanghole@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 00:18:19 by sanghole          #+#    #+#             */
-/*   Updated: 2021/11/29 06:51:55 by sanghole         ###   ########.fr       */
+/*   Updated: 2021/12/06 12:16:36 by sanghole         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,8 @@ int	print_status(t_philo *ph, int data)
 	pthread_mutex_lock(&ph->data->print);
 	if (ph->data->check_end)
 	{
+		pthread_mutex_unlock(&ph->data->fork[ph->id]);
+		pthread_mutex_unlock(&ph->data->fork[ph->id + 1]);
 		pthread_mutex_unlock(&ph->data->print);
 		return (1);
 	}

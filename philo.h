@@ -6,7 +6,7 @@
 /*   By: sanghole <sanghole@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 16:28:24 by sanghole          #+#    #+#             */
-/*   Updated: 2021/11/29 15:31:37 by sanghole         ###   ########.fr       */
+/*   Updated: 2021/12/06 12:16:28 by sanghole         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,5 @@ int			create_thread(t_data *status);
 void		free_alloc(t_data *data);
 int			destroy_forks(t_data *data, int num);
 int			free_n_destory(t_data *data, char *str);
-int			get_forks(t_philo *ph, int status);
 
 #endif

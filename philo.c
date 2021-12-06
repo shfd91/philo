@@ -6,7 +6,7 @@
 /*   By: sanghole <sanghole@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 16:28:26 by sanghole          #+#    #+#             */
-/*   Updated: 2021/11/29 15:44:54 by sanghole         ###   ########.fr       */
+/*   Updated: 2021/12/06 04:29:49 by sanghole         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,6 @@ int	monitoring(t_data *data)
 			return (free_n_destory(data, "thread join"));
 		i++;
 	}
-	my_usleep(100);
 	if (free_n_destory(data, NULL) == -1)
 		return (-1);
 	return (0);
