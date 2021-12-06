@@ -6,7 +6,7 @@
 /*   By: sanghole <sanghole@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/14 14:38:40 by sanghole          #+#    #+#             */
-/*   Updated: 2021/12/06 12:15:34 by sanghole         ###   ########.fr       */
+/*   Updated: 2021/12/06 13:16:31 by sanghole         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	*eat_alone(void *philo)
 
 	ph = (t_philo *)philo;
 	pthread_mutex_lock(&ph->data->fork[ph->id]);
-	get_forks(ph, 0);
+	print_status(ph, FORK);
 	my_usleep(ph->data->t_to_die);
 	pthread_mutex_unlock(&ph->data->fork[ph->id]);
 	return (NULL);
